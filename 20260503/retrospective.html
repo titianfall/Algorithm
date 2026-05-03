@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2026-05-03 알고리즘 회고</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', 'Malgun Gothic', sans-serif;
+      background: #0f1117;
+      color: #e2e8f0;
+      padding: 2rem;
+      line-height: 1.6;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 3rem;
+      border-bottom: 1px solid #2d3748;
+      padding-bottom: 1.5rem;
+    }
+
+    header h1 { font-size: 1.8rem; color: #63b3ed; margin-bottom: 0.4rem; }
+    header p  { color: #718096; font-size: 0.95rem; }
+
+    .tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 999px;
+      margin-right: 6px;
+      vertical-align: middle;
+    }
+    .tag.lv0  { background: #2d3748; color: #68d391; border: 1px solid #38a169; }
+    .tag.lv1  { background: #2d3748; color: #fbd38d; border: 1px solid #d69e2e; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .card {
+      background: #1a202c;
+      border: 1px solid #2d3748;
+      border-radius: 10px;
+      padding: 1.2rem 1.4rem;
+      transition: border-color 0.2s;
+    }
+    .card:hover { border-color: #4a5568; }
+
+    .card-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #e2e8f0;
+      margin-bottom: 0.6rem;
+    }
+
+    .card-file {
+      font-size: 0.75rem;
+      color: #4a5568;
+      margin-bottom: 0.8rem;
+      font-family: monospace;
+    }
+
+    .key-label {
+      font-size: 0.72rem;
+      color: #718096;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.3rem;
+    }
+
+    .key-point {
+      font-size: 0.88rem;
+      color: #90cdf4;
+      margin-bottom: 0.8rem;
+    }
+
+    code {
+      background: #2d3748;
+      color: #f6ad55;
+      font-family: 'Consolas', 'Fira Code', monospace;
+      font-size: 0.82rem;
+      padding: 1px 6px;
+      border-radius: 4px;
+    }
+
+    pre {
+      background: #171e2b;
+      border: 1px solid #2d3748;
+      border-radius: 6px;
+      padding: 0.7rem 1rem;
+      font-family: 'Consolas', 'Fira Code', monospace;
+      font-size: 0.8rem;
+      color: #a0aec0;
+      overflow-x: auto;
+      margin-top: 0.5rem;
+      line-height: 1.5;
+    }
+
+    .note {
+      font-size: 0.8rem;
+      color: #68d391;
+      margin-top: 0.5rem;
+      padding: 0.4rem 0.7rem;
+      border-left: 2px solid #38a169;
+      background: #1a2e1f;
+      border-radius: 0 4px 4px 0;
+    }
+
+    .section-title {
+      font-size: 1.1rem;
+      color: #a0aec0;
+      margin: 2.5rem 0 1rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid #2d3748;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      color: #4a5568;
+      font-size: 0.8rem;
+      border-top: 1px solid #2d3748;
+      padding-top: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>알고리즘 학습 회고</h1>
+  <p>2026-05-03 &nbsp;·&nbsp; Programmers C++ &nbsp;·&nbsp; 24문제</p>
+</header>
+
+<!-- ───────── 수학 / 수 처리 ───────── -->
+<p class="section-title">수학 / 수 처리</p>
+<div class="grid">
+
+  <div class="card">
+    <div class="card-title"><span class="tag lv0">Lv.0</span>짝수의 합</div>
+    <div class="card-file">evenadd.cpp</div>
+    <div class="key-label">핵심</div>
+    <div class="key-point"><code>i += 2</code>로 짝수만 순회하면 조건 분기 불필요</div>
+    <pre>for(int i = 0; i &lt;= n; i += 2) answer += i;</pre>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="tag lv0">Lv.0</span>자릿수 더하기</div>
+    <div class="card-file">addDigits.cpp</div>
+    <div class="key-label">핵심</div>
+    <div class="key-point"><code>n % 10</code>으로 1의 자리 추출, <code>n /= 10</code>으로 자리 이동</div>
+    <pre>while(n/10 != 0){ answer += n%10; n /= 10; }
+answer += n;</pre>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="tag lv0">Lv.0</span>제곱수 판별하기</div>
+    <div class="card-file">isSquareNumber.cpp</div>
+    <div class="key-label">핵심</div>
+    <div class="key-point"><code>sqrt(n)</code>을 int로 캐스팅 후 다시 제곱해 비교 — 부동소수점 오차 회피</div>
+    <pre>int s = (int)sqrt(n);
+if(s * s == n) answer = 1;</pre>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="tag lv0">Lv.0</span>세균 증식</div>
+    <div class="card-file">bacterial.cpp</div>
+    <div class="key-label">핵심</div>
+    <div class="key-point">2의 거듭제곱은 <code>1 &lt;&lt; t</code> 비트 시프트가 최적 — pow 대비 빠르고 오차 없음</div>
+    <pre>return n * (1 &lt;&lt; t);</pre>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="tag lv0">Lv.0</span>약수 구하기</div>
+    <div class="card-file">factor.cpp</div>
+    <div class="key-label">핵심</div>
+    <div class="key-point">순회를 <code>n/2</code>까지만 하고 <code>n</code>은 마지막에 직접 추가</div>
+    <pre>for(int i = 1; i &lt;= n/2; i++)
+  if(n % i == 0) answer.push_back(i);
+answer.push_back(n);</pre>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="tag lv0">Lv.0</span>순서쌍의 개수</div>
+    <div class="card-file">orderedPair.cpp</div>
+    <div class="key-label">핵심</div>
+    <div class="key-point">약수 개수 세기 — <code>O(n/2)</code>보다 <code>O(√n)</code>이 더 빠름</div>
+    <pre>// O(√n) 풀이
+for(int i = 1; i*i &lt;= n; i++){
+  if(n % i == 0){
+    answer += 2;
+    if(i*i == n) answer--; // 완전제곱수 보정
+  }
+}</pre>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="tag lv0">Lv.0</span>개미 군단</div>
+    <div class="card-file">ant.cpp</div>
+    <div class="key-label">핵심</div>
+    <div class="key-point">그리디 — 큰 단위(5→3→1)부터 최대한 사용. <code>hp / i</code>개 사용 후 나머지로 이어짐</div>
+    <pre>for(int i = 5; i > 0; i -= 2){
+  answer += hp / i;
+  hp %= i;
+}</pre>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="tag lv0">Lv.0</span>주사위의 개수</div>
+    <div class="card-file">diceNumber.cpp</div>
+    <div class="key-label">핵심</div>
+    <div class="key-point">각 축 방향으로 <code>box[i] / n</code>개씩 들어가고, 세 방향의 곱이 총 개수</div>
+    <pre>for(int size : box) answer *= size / n;</pre>
+  </div>
+
+</div>
+
+<!-- ───────── 배열 / 벡터 ───────── -->
+<p class="section-title">배열 / 벡터</p>
+<div class="grid">
+
+  <div class="card">
+    <div class="card-title"><span class="tag lv0">Lv.0</span>배열 자르기</div>
+    <div class="card-file">cutVector.cpp</div>
+    <div class="key-label">핵심</div>
+    <div class="key-point"><code>num1</code>~<code>num2</code> 인덱스 범위 순회 후 push_back</div>
+    <pre>for(int i = num1; i &lt;= num2; i++)
+  answer.push_back(numbers[i]);</pre>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="tag lv0">Lv.0</span>배열 원소의 길이</div>
+    <div class="card-file">vectorLength.cpp</div>
+    <div class="key-label">핵심</div>
+    <div class="key-point"><code>string.length()</code> 또는 <code>.size()</code>로 문자열 길이 추출</div>
+    <pre>for(int i = 0; i &lt; strlist.size(); i++)
+  answer.push_back(strlist[i].length());</pre>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="tag lv0">Lv.0</span>가장 큰 수 찾기</div>
+    <div class="card-file">findMax.cpp</div>
+    <div class="key-label">핵심</div>
+    <div class="key-point">직접 구현보다 <code>max_element</code> + <code>distance</code>가 간결</div>
+    <pre>auto t = max_element(array.begin(), array.end());
+answer.push_back(*t);
+answer.push_back(distance(array.begin(), t));</pre>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="tag lv0">Lv.0</span>중복된 숫자 개수</div>
+    <div class="card-file">duplicatedNumber.cpp</div>
+    <div class="key-label">핵심</div>
+    <div class="key-point"><code>count(begin, end, val)</code>로 특정 값의 개수 한 줄 처리</div>
+    <pre>answer = count(array.begin(), array.end(), n);</pre>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="tag lv0">Lv.0</span>배열의 유사도</div>
+    <div class="card-file">similarity.cpp</div>
+    <div class="key-label">핵심</div>
+    <div class="key-point"><code>find</code>로 공통 원소 탐색. 못 찾으면 <code>end()</code> 반환</div>
+    <pre>auto it = find(s2.begin(), s2.end(), st1);
+if(it != s2.end()) answer++;</pre>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="tag lv0">Lv.0</span>n의 배수 고르기</div>
+    <div class="card-file">multiple.cpp</div>
+    <div class="key-label">핵심</div>
+    <div class="key-point"><code>accumulate</code>에 람다를 넘기면 필터링과 누적을 한 번에 처리 가능</div>
+    <pre>// 람다 활용 예시
+return accumulate(numlist.begin(), numlist.end(),
+  vector&lt;int&gt;{},
+  [n](vector&lt;int&gt;&amp; v, int a){
+    if(!(a%n)) v.push_back(a);
+    return v;
+  });</pre>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="tag lv0">Lv.0</span>최댓값 만들기(1)</div>
+    <div class="card-file">makeMax.cpp</div>
+    <div class="key-label">핵심</div>
+    <div class="key-point">O(n²) 이중 루프보다 내림차순 정렬 후 마지막 두 원소 곱이 O(n log n)으로 빠름</div>
+    <pre>sort(numbers.begin(), numbers.end());
+answer = numbers[n-1] * numbers[n-2];</pre>
+  </div>
+
+</div>
+
+<!-- ───────── 문자열 ───────── -->
+<p class="section-title">문자열</p>
+<div class="grid">
+
+  <div class="card">
+    <div class="card-title"><span class="tag lv1">Lv.1</span>문자열을 정수로 바꾸기</div>
+    <div class="card-file">stringToInt.cpp</div>
+    <div class="key-label">핵심</div>
+    <div class="key-point">3가지 방법 — 실무는 <code>stoi</code>, 스트림은 <code>stringstream</code>, 원리 이해는 직접 구현</div>
+    <pre>stoi(s);              // 가장 간단
+stringstream ss(s); ss >> answer; // 스트림
+// 직접: answer = answer*10 + (s[i]-'0')</pre>
+    <div class="note">부호 처리: s[0]=='-' 이면 sign=-1, 이후 answer*sign</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="tag lv0">Lv.0</span>대문자와 소문자</div>
+    <div class="card-file">UpperLowercase.cpp</div>
+    <div class="key-label">핵심</div>
+    <div class="key-point"><code>toupper / tolower</code> 또는 ASCII ±32로 대소문자 변환</div>
+    <pre>if(islower(ch)) answer += toupper(ch); // 또는 ch - 32
+if(isupper(ch)) answer += tolower(ch); // 또는 ch + 32</pre>
+    <div class="note">A=65, a=97 → 차이 32</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="tag lv0">Lv.0</span>모음 제거</div>
+    <div class="card-file">deleteGather.cpp</div>
+    <div class="key-label">핵심</div>
+    <div class="key-point">모음 집합과 비교해 해당하지 않는 문자만 결과에 추가</div>
+    <pre>char gather[] = {'a','e','i','o','u'};
+// 또는 string::find로 간결하게 처리 가능</pre>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="tag lv0">Lv.0</span>숨어있는 숫자의 덧셈</div>
+    <div class="card-file">onlyNumberAdd.cpp</div>
+    <div class="key-label">핵심</div>
+    <div class="key-point"><code>&lt;cctype&gt;</code>의 판별 함수들 — 문자 분류에 자주 쓰임</div>
+    <pre>isdigit(ch)  // 숫자 0-9
+isalpha(ch)  // 알파벳
+isalnum(ch)  // 알파벳 or 숫자
+isspace(ch)  // 공백
+if(isdigit(ch)) answer += ch - '0';</pre>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="tag lv0">Lv.0</span>문자열 안에 문자열</div>
+    <div class="card-file">strInStr.cpp</div>
+    <div class="key-label">핵심</div>
+    <div class="key-point"><code>string::find</code>는 못 찾으면 <code>string::npos</code> 반환 — 직접 substr 비교보다 간결</div>
+    <pre>return str1.find(str2) != string::npos ? 1 : 2;</pre>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="tag lv0">Lv.0</span>편지</div>
+    <div class="card-file">letter.cpp</div>
+    <div class="key-label">핵심</div>
+    <div class="key-point">왕복 거리 = 편도 길이 × 2</div>
+    <pre>return message.length() * 2;</pre>
+  </div>
+
+</div>
+
+<!-- ───────── 조건 / 분류 ───────── -->
+<p class="section-title">조건 / 분류</p>
+<div class="grid">
+
+  <div class="card">
+    <div class="card-title"><span class="tag lv0">Lv.0</span>점의 위치 구하기</div>
+    <div class="card-file">getQuadrant.cpp</div>
+    <div class="key-label">핵심</div>
+    <div class="key-point">x, y 부호 조합으로 사분면 결정 — 중첩 if문으로 명확히 분기</div>
+    <pre>if(x>0 && y>0) return 1;
+if(x<0 && y>0) return 2;
+if(x<0 && y<0) return 3;
+if(x>0 && y<0) return 4;</pre>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="tag lv0">Lv.0</span>삼각형의 완성조건(1)</div>
+    <div class="card-file">triangleAC.cpp</div>
+    <div class="key-label">핵심</div>
+    <div class="key-point">sort 후 가장 긴 변 확인 — 가장 긴 변 &lt; 나머지 두 변의 합 이어야 삼각형</div>
+    <pre>sort(sides.begin(), sides.end());
+if(sides[2] >= sides[0] + sides[1]) answer = 2;</pre>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="tag lv0">Lv.0</span>가위바위보</div>
+    <div class="card-file">rockSisserPaper.cpp</div>
+    <div class="key-label">핵심</div>
+    <div class="key-point">문자열을 룩업 테이블로 활용 — 분기문 없이 매핑 처리</div>
+    <pre>// 가위=2, 바위=0, 보=5
+// [인덱스] = 그 손을 이기는 손
+for(auto& it : rsp) it = "5-0--2"[it - 48];</pre>
+    <div class="note">문자열 리터럴은 배열 — []로 인덱싱 가능</div>
+  </div>
+
+</div>
+
+<footer>
+  <p>2026-05-03 &nbsp;·&nbsp; Programmers Level 0~1 &nbsp;·&nbsp; C++ &nbsp;·&nbsp; 24문제 완료</p>
+</footer>
+
+</body>
+</html>
