@@ -3,6 +3,7 @@
 #include <string>
 #include <vector>
 #include <algorithm>
+#include <numeric>
 using namespace std;
 
 int solution(vector<int> array, int n) {
@@ -13,6 +14,9 @@ int solution(vector<int> array, int n) {
 
     answer = count(array.begin(), array.end(), n);
     return answer;
+    // accumulate(first, last, init, op)
+    // accumulate(first = v.begin(), last = v.end(), init = vector<int>{}, op = [](vector<int> acc, int x) { acc.push_back(x); return acc;})
+    // return accumulate(array.begin(), array.end(), 0, [n](int& x, int& i) { return x += i == n;});
 }
 
 int main(){
