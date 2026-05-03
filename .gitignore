@@ -52,6 +52,9 @@ Makefile
 install_manifest.txt
 compile_commands.json
 
+# VSCode settings
+.vscode/
+
 # Temporary files
 *.tmp
 *.log
