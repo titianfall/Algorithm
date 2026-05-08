@@ -1,0 +1,19 @@
+1. isParentheses.cpp 
+올바른 괄호 찾기 문제 
+!s.empty() && ch == ')' 보다 
+else 조건에서 s.empty()를 검사하면 더 간단하게 구현이 가능했다
+
+2. JadenCase.cpp
+모든 단어의 첫 문자를 대문자로 만드는 문제
+bool isNew 플래그를 사용하여 첫문자만 판단하면 되는 간단한 문제였다.
+
+3. makeMin.cpp
+최솟값 만들기 문제
+algorithm 헤더의 sort(begin(), end()), sort(rbegin(), rend())를 사용하면 쉽고 빠르게 풀수 있지만
+연습을 위해 nlogn 시간복잡도중 하나인 qsort를 직접 구현하였다. 
+
+4. binaryTranslation.cpp - 다시 풀것
+이진 변환 반복하기 문제
+숫자를 이진수로 변환하는 방법이 생각나지 않아서 고전했다.
+break 조건을 str == "1"로만 하여도 가능했음을 놓치기도 했다.
+내일 bitset 이라는 라이브러리를 사용해 다시 풀어보아야한다.
