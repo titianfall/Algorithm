@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir 20260514)",
+      "Bash(git commit *)",
+      "Bash(git add *)",
+      "Bash(git push *)"
+    ]
+  }
+}

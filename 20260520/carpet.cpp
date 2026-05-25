@@ -19,7 +19,7 @@ vector<int> solution(int brown, int yellow) {
         int w = size/h; // 가로
         if(w < h) break;
 
-        // 왜 2개씩? 
+        // 상단 하단 1개, 좌 우 1개씩 제거한 값이 노란 값이됨
         if((w - 2) * (h - 2) == yellow)
             return {w, h};
     }
