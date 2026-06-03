@@ -57,6 +57,9 @@ compile_commands.json
 # VSCode settings
 .vscode/
 
+# Local agent settings
+.claude/settings.local.json
+
 # Temporary files
 *.tmp
 *.log
