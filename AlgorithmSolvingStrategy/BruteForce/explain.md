@@ -10,6 +10,11 @@
 - 문제 사이트: [Algospot BOGGLE](<https://algospot.com/judge/problem/read/BOGGLE>)
 - 풀이 코드: [boggle.cpp](<boggle.cpp>)
 
+짝짓기 문제를 통해 완전 탐색에서 자주 발생하는 **중복 세기 오류**를 익힌다.
+
+- 문제 사이트: [Algospot PICNIC](<https://algospot.com/judge/problem/read/PICNIC>)
+- 풀이 코드: [picnic.cpp](<picnic.cpp>)
+
 ## 1. 무식하게 풀기란?
 
 컴퓨터는 사람이 하기 어려운 반복 계산을 매우 빠르게 처리할 수 있다.  

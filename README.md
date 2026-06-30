@@ -14,8 +14,9 @@
 
 | 날짜 | 문제 | 핵심 주제 | 요약 | 파일 |
 | --- | --- | --- | --- | --- |
-| 2026-06-30 | 무식하게 풀기 | 완전 탐색, 재귀 | 완전 탐색의 의미와 재귀 호출의 기본 구조를 정리 | [explain.md](<알고리즘 문제해결전략/무식하게 풀기/explain.md>) |
-| 2026-06-27 | BOGGLE | 완전 탐색, DFS, 8방향 탐색 | 5x5 보드에서 단어를 만들 수 있는지 모든 시작점과 8방향으로 탐색 | [boggle.cpp](<알고리즘 문제해결전략/무식하게 풀기/boggle.cpp>) |
+| 2026-06-30 | 피크닉 | 완전 탐색, 중복 제거 | 짝짓기 문제에서 중복 세기 오류 원인과 가장 번호 빠른 학생 고정으로 해결 | [picnic.cpp](<AlgorithmSolvingStrategy/BruteForce/picnic.cpp>), [explain.md](<AlgorithmSolvingStrategy/BruteForce/explain.md>) |
+| 2026-06-30 | 무식하게 풀기 | 완전 탐색, 재귀 | 완전 탐색의 의미와 재귀 호출의 기본 구조를 정리 | [explain.md](<AlgorithmSolvingStrategy/BruteForce/explain.md>) |
+| 2026-06-27 | BOGGLE | 완전 탐색, DFS, 8방향 탐색 | 5x5 보드에서 단어를 만들 수 있는지 모든 시작점과 8방향으로 탐색 | [boggle.cpp](<AlgorithmSolvingStrategy/BruteForce/boggle.cpp>) |
 | 2026-06-27 | 음식 고르기 | 부분집합, 백트래킹 | 각 음식을 선택하거나 선택하지 않는 모든 경우를 탐색해 모두가 먹을 수 있는 최소 메뉴 수 계산 | [selectFood.cpp](<2026.06/27/selectFood.cpp>) |
 | 2026-06-27 | 조합 선택 연습 | 재귀, 조합 | n개 중 k개를 고르는 선택 과정을 재귀로 연습 | [findToPick.cpp](<2026.06/27/findToPick.cpp>) |
 | 2026-06-06 | 롤케이크 자르기 | 해시, 카운팅 | 왼쪽 종류 수와 오른쪽 종류 수를 유지하며 공평한 자르기 위치 계산 | [rollCakeCut.cpp](<2026.06/06/rollCakeCut.cpp>) |
@@ -29,8 +30,9 @@
 
 ### 완전 탐색 / DFS / 백트래킹
 
-- [boggle.cpp](<알고리즘 문제해결전략/무식하게 풀기/boggle.cpp>): 모든 시작점에서 8방향 재귀 탐색, 시간복잡도 O(8^n) 분석 포함
-- [pick.cpp](<알고리즘 문제해결전략/무식하게 풀기/pick.cpp>): 무식하게 풀기 예제
+- [boggle.cpp](<AlgorithmSolvingStrategy/BruteForce/boggle.cpp>): 모든 시작점에서 8방향 재귀 탐색, 시간복잡도 O(8^n) 분석 포함
+- [picnic.cpp](<AlgorithmSolvingStrategy/BruteForce/picnic.cpp>): 짝짓기 중복 세기 오류 → 가장 번호 빠른 학생 고정으로 해결
+- [pick.cpp](<AlgorithmSolvingStrategy/BruteForce/pick.cpp>): 무식하게 풀기 예제
 - [selectFood.cpp](<2026.06/27/selectFood.cpp>): 음식 선택/미선택 부분집합 탐색
 - [findToPick.cpp](<2026.06/27/findToPick.cpp>): 조합을 재귀로 생성
 - [fatiuge.cpp](<2026.06/01/fatiuge.cpp>): 던전 방문 순서 완전 탐색
