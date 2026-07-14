@@ -10,10 +10,14 @@
 2. **주제별 문제 바로가기**에서 비슷한 유형 아래에 링크 추가
 3. 나중에 다시 볼 만한 실수나 개념이면 **다시 볼 포인트**에 짧게 기록
 
-## 최근 풀이 요약
+<details>
+<summary>최근 풀이 요약</summary>
+
+<br>
 
 | 날짜 | 문제 | 핵심 주제 | 요약 | 파일 |
 | --- | --- | --- | --- | --- |
+| 2026-07-14 | 쿼드 트리 뒤집기 | 분할 정복, 재귀, 쿼드 트리 | 압축 문자열을 재귀적으로 읽으며 상하 사분면 순서를 교환 | [quadTree.cpp](<AlgorithmSolvingStrategy/DivideAndConquer/quadTree.cpp>), [quadtree.md](<AlgorithmSolvingStrategy/DivideAndConquer/quadtree.md>) |
 | 2026-06-30 | 피크닉 | 완전 탐색, 중복 제거 | 짝짓기 문제에서 중복 세기 오류 원인과 가장 번호 빠른 학생 고정으로 해결 | [picnic.cpp](<AlgorithmSolvingStrategy/BruteForce/picnic.cpp>), [explain.md](<AlgorithmSolvingStrategy/BruteForce/explain.md>) |
 | 2026-06-30 | 무식하게 풀기 | 완전 탐색, 재귀 | 완전 탐색의 의미와 재귀 호출의 기본 구조를 정리 | [explain.md](<AlgorithmSolvingStrategy/BruteForce/explain.md>) |
 | 2026-06-27 | BOGGLE | 완전 탐색, DFS, 8방향 탐색 | 5x5 보드에서 단어를 만들 수 있는지 모든 시작점과 8방향으로 탐색 | [boggle.cpp](<AlgorithmSolvingStrategy/BruteForce/boggle.cpp>) |
@@ -26,7 +30,17 @@
 | 2026-06-02 | 기능개발 | 큐, 묶음 처리 | 배포까지 남은 날짜를 계산하고 앞 작업 기준으로 함께 배포되는 개수 묶기 | [functionDev.cpp](<2026.06/02/functionDev.cpp>) |
 | 2026-06-01 | 피로도 | DFS, 완전 탐색 | 가능한 던전 방문 순서를 모두 시도해 최대 방문 수 계산 | [fatiuge.cpp](<2026.06/01/fatiuge.cpp>) |
 
-## 주제별 문제 바로가기
+</details>
+
+<details>
+<summary>주제별 문제 바로가기</summary>
+
+<br>
+
+### 분할 정복
+
+- [quadTree.cpp](<AlgorithmSolvingStrategy/DivideAndConquer/quadTree.cpp>): 쿼드 트리 압축 문자열을 실제 그림으로 풀지 않고 상하 반전
+- [quadtree.md](<AlgorithmSolvingStrategy/DivideAndConquer/quadtree.md>): 문자열 분할 방식과 iterator 방식 비교
 
 ### 완전 탐색 / DFS / 백트래킹
 
@@ -126,7 +140,12 @@
 - [triangleAC.cpp](<2026.05/20260503/triangleAC.cpp>): 삼각형 조건
 - [vectorLength.cpp](<2026.05/20260503/vectorLength.cpp>): 벡터 길이 계산
 
-## 다시 볼 포인트
+</details>
+
+<details>
+<summary>다시 볼 포인트</summary>
+
+<br>
 
 - C++ range-based for는 `vector`, `string`, 배열처럼 순회 가능한 대상에만 사용할 수 있다.
 - 완전 탐색은 먼저 가능한 모든 경우를 정확히 세우고, 느릴 때 최적화를 붙인다.
@@ -135,8 +154,15 @@
 - 문자열 접두어 문제는 정렬하면 비교 대상이 인접하게 모이는 경우가 많다.
 - 큰 입력에서는 `erase`, 중첩 반복, 문자열 복사처럼 숨어 있는 비용을 먼저 의심한다.
 
-## 문제 추가 템플릿
+</details>
+
+<details>
+<summary>문제 추가 템플릿</summary>
+
+<br>
 
 ```md
 | YYYY-MM-DD | 문제 이름 | 핵심 주제 | 한 줄 요약 | 파일 링크 |
 ```
+
+</details>
