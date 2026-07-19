@@ -126,6 +126,7 @@ int someObscureFunction(int a, int b) {
 
 int main() {
     // memset()을 이용해 cache 배열을 초기화한다.
+    // #include <cstring>
     memset(cache, -1, sizeof(cache));
 }
 ```
