@@ -2,7 +2,6 @@
 #include <cstring>
 #include <iostream>
 #include <limits>
-#include <vector>
 
 using namespace std;
 
@@ -64,12 +63,7 @@ int main() {
 
     // 각 테스트 케이스마다 두 수열의 길이와 원소를 입력받는다.
     while (count--) {
-        int n, m;
         cin >> n >> m;
-
-        // 문제의 원소는 32비트 부호 있는 정수 범위지만,
-        // 이후 가상 시작값을 둘 수 있도록 long long으로 저장한다.
-        vector<long long> A(n), B(m);
 
         for (int i = 0; i < n; ++i) {
             cin >> A[i];
@@ -79,7 +73,12 @@ int main() {
             cin >> B[i];
         }
 
-        // JLIS 계산과 출력은 이후에 추가한다.
+        // 테스트 케이스마다 이전 계산 결과를 지운다.
+        memset(cache, -1, sizeof(cache));
+
+        // (-1, -1)은 두 수열 모두 아직 원소를 선택하지 않은 가상 시작점이다.
+        // jlis()가 가상 원소 두 개를 포함해 길이를 계산하므로 최종 결과에서 2를 뺀다.
+        cout << jlis(-1, -1) - 2 << '\n';
     }
 
     return 0;
