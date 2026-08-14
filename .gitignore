@@ -57,6 +57,14 @@ compile_commands.json
 # VSCode settings
 .vscode/
 
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# Java build output
+*.class
+out/
+
 # Local agent settings
 .claude/settings.local.json
 
