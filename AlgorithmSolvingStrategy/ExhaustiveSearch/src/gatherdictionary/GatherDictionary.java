@@ -4,8 +4,8 @@ class Solution {
     private final String[] VOWELS = {"A", "E", "I", "O", "U"};
     private static final int MAX_LENGTH = 5;
 
-    private int count;
-    private int answer;
+    private int count = 0;
+    private int answer = 0;
 
     public int solution(String word) {
         count = 0;
