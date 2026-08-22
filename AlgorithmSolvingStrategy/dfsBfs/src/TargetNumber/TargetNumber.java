@@ -1,3 +1,5 @@
+package TargetNumber;
+
 // 타겟 넘버 - DFS 완전탐색, 시간 O(2^n) / 공간 O(n)
 class Solution {
     private int answer = 0;
@@ -24,7 +26,7 @@ class Solution {
 }
 public class TargetNumber {
     public static void main(String[] args) {
-        // answer가 인스턴스 필드라 테스트마다 새 Solution 필요
+        // answer가 인스턴스 필드라 테스트마다 새 TargetNumber.Solution 필요
         System.out.println(new Solution().solution(new int[]{1, 1, 1, 1, 1}, 3)); // 5
         System.out.println(new Solution().solution(new int[]{4, 1, 2, 1}, 4));    // 2
     }
